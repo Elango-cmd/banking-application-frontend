@@ -1,0 +1,19 @@
+<div class="faq-container">
+    <h1>Frequently Asked Questions (FAQs)</h1>
+  
+    <div class="faq-item" *ngFor="let faq of faqs; let i = index">
+      <div class="faq-question" (click)="toggleAnswer(i)">
+        <h2>{{ faq.question }}</h2>
+        <i class="fas" [ngClass]="faq.open ? 'fa-minus' : 'fa-plus'"></i>
+      </div>
+      <div *ngIf="faq.open" class="faq-answer">
+        <p>{{ faq.answer }}</p>
+      </div>
+    </div>
+  
+    <div class="help-center">
+      <h2>Need more help?</h2>
+      <p>If you couldn't find an answer to your question, please visit our <a routerLink="/contact" routerLinkActive="active">Contact Us</a> page or reach out to our support team.</p>
+    </div>
+  </div>
+  

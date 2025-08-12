@@ -1,0 +1,54 @@
+<div class="payment-body"> 
+    <div class="payment-container">
+      <div class="payment-header">
+        <h2>CREATE YOUR ACCOUNT</h2>
+      </div>
+  
+    <!-- <div class="payment-balance">
+      <p><strong>Current Balance:</strong> ₹{{ currentBalance }}</p>
+    </div> -->
+  
+    <!-- Payment Form -->
+    <form class="payment-form" [formGroup]="paymentForm">
+        <div class="payment-input">
+            <label class="payment-form-label">Payment Amount (INR)</label>
+            <input type="number" class="payment-form-control" formControlName="paymentAmount" [disabled]="true">
+            <div class="text-danger" *ngIf="paymentForm.controls['paymentAmount'].invalid && (isFormSubmitted || paymentForm.controls['paymentAmount'].touched || paymentForm.controls['paymentAmount'].dirty)">
+               <span *ngIf="paymentForm.controls['paymentAmount'].errors?.['required']">This Field is Required</span>
+               <span *ngIf="paymentForm.controls['paymentAmount'].errors?.['required']">Payment amount must be greater than 0</span>
+            </div>
+        </div>
+  
+      <div class="payment-input">
+        <label class="payment-form-label">Payment Method</label>
+        <select class="payment-form-control" id="paymentType" formControlName="paymentType">
+          <option value="creditCard">Credit Card</option>
+          <option value="debitCard">Debit Card</option>
+          <option value="upi">UPI</option> 
+        </select>
+        <div class="text-danger" *ngIf="paymentForm.controls['paymentType'].invalid && (isFormSubmitted || paymentForm.controls['paymentType'].touched || paymentForm.controls['paymentType'].dirty)">
+            <span *ngIf="paymentForm.controls['paymentType'].errors?.['paymentType']">This Field is Required</span>
+        </div>
+      </div>
+  
+      <div class="payment-input">
+        <label class="payment-form-label">Customer Name</label>
+        <input type="text" class="payment-form-control" formControlName="customerName"  [disabled]="true">
+        <div class="text-danger" *ngIf="paymentForm.controls['customerName'].invalid && (isFormSubmitted || paymentForm.controls['customerName'].touched || paymentForm.controls['customerName'].dirty)">
+           <span *ngIf="paymentForm.controls['customerName'].errors?.['required']">This Field is Required</span>
+        </div>
+      </div>
+  
+      <div class="payment-input-button">
+        <input type="Submit" (click)="onSubmit()" value="Pay Now">
+      </div>
+    </form>
+  
+    <!-- Transaction Message -->
+    <div *ngIf="transactionMessage" class="transaction-message">
+      <p>{{ transactionMessage }}</p>
+    </div>
+  </div>
+</div>
+
+  

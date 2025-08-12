@@ -1,0 +1,48 @@
+/* security-practices.component.css */
+.security-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    text-decoration: underline;
+    color: #2c3e50;
+  }
+  
+  .security-tip {
+    background-color: #ecf0f1;
+    border-left: 5px solid #3498db;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+  }
+  
+  .security-tip h2 {
+    color: #3498db;
+    margin-bottom: 10px;
+  }
+  
+  .security-tip p {
+    color: #7f8c8d;
+  }
+  
+  a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #023353;
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 768px) {
+    .security-container {
+      padding: 10px;
+    }
+  }
+  

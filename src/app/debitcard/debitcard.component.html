@@ -1,0 +1,49 @@
+<!-- debit-card.component.html -->
+<div class="debit-card-container">
+    <h2 class="debit-card-header">Enter Debit Card Details</h2>
+  
+    <!-- Debit Card Form -->
+    <form [formGroup]="debitCardForm" class="debit-card-form">
+
+      <div class="form-group">
+        <label class="payment-form-label">Payment Amount (INR)</label>
+        <input type="number" class="payment-form-control" formControlName="paymentAmount">
+        <div class="error-message" *ngIf="debitCardForm.controls['paymentAmount'].invalid && (debitCardForm.controls['paymentAmount'].touched || debitCardForm.controls['paymentAmount'].dirty)">
+           <span *ngIf="debitCardForm.controls['paymentAmount'].errors?.['required']">This Field is Required</span>
+           <span *ngIf="debitCardForm.controls['paymentAmount'].errors?.['required']">Payment amount must be greater than 0</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input id="cardNumber" formControlName="cardNumber" type="text" placeholder="Enter your card number" class="form-control" />
+        <div class="error-message" *ngIf="debitCardForm.controls['cardNumber'].invalid && debitCardForm.controls['cardNumber'].touched">
+          Please enter a valid card number.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="expiryDate">Expiry Date</label>
+        <input id="expiryDate" formControlName="expiryDate" type="text" placeholder="MM/YY" class="form-control" />
+        <div class="error-message" *ngIf="debitCardForm.controls['expiryDate'].invalid && debitCardForm.controls['expiryDate'].touched">
+          Please enter a valid expiry date.
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="cvv">CVV</label>
+        <input id="cvv" formControlName="cvv" type="text" placeholder="CVV" class="form-control" />
+        <div class="error-message" *ngIf="debitCardForm.controls['cvv'].invalid && debitCardForm.controls['cvv'].touched">
+          Please enter a valid CVV.
+        </div>
+      </div>
+  
+      <button type="submit" (ngSubmit)="onDebit()" class="submit-button">Submit</button>
+    </form>
+  
+    <!-- Transaction Message -->
+    <div *ngIf="transactionMessage" class="transaction-message">
+      <p>{{ transactionMessage }}</p>
+    </div>
+  </div>
+  

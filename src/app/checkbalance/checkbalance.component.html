@@ -1,0 +1,30 @@
+<app-innernavbar></app-innernavbar>
+<div class="chack-balance-body"> 
+  <div class="check-balance-container">
+    <div class="check-balance-header">
+      <h2>Account Balance Information</h2>
+    </div>
+    <form class="check-balance-form" [formGroup]="checkBalanceUserForm">
+
+        <div class="check-balance-input">
+            <label class="check-balance-form-label">Account Number : </label>
+            <input type="number" class="check-balance-form-control" formControlName="accountNumber" [disabled]="true">
+        </div>
+        
+        <div class="check-balance-button">
+            <input type="Submit" (click)="onCheck()" value="Check Balance">
+        </div>
+
+        <div class="check-balance-hide">
+            <div class="check-balance-input">
+                <label class="check-balance-form-label">Account Holder Name : </label>
+                <input type="text" class="check-balance-form-control" formControlName="customerName" [disabled]="true">
+            </div>
+            <div class="check-balance-input">
+                <label class="check-balance-form-label">Account Balance : </label>
+                <input type="text" class="check-balance-form-control" formControlName="accountBalance" [disabled]="true">
+            </div>
+        </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,49 @@
+<div class="contact-header">
+    <h1>Contact Us</h1>
+    <p>If you have any questions or need assistance, please reach out to us by filling out the form below. We'll get back to you as soon as possible.</p>
+</div>
+<div class="contact-body"> 
+<div class="contact-container"> 
+    <!-- Contact Form -->
+    <form class="contact-form" [formGroup]="contactUserForm">
+        <div class="contact-input">
+          <label class="contact-form-label">Customer Name</label>
+          <input type="text" class="contact-form-control" formControlName="customerName">
+          <div class="text-danger" *ngIf="contactUserForm.controls['customerName'].invalid && (isFormSubmitted || contactUserForm.controls['customerName'].touched || contactUserForm.controls['customerName'].dirty)">
+             <span *ngIf="contactUserForm.controls['customerName'].errors?.['required']">This Field is Required</span>
+          </div>
+        </div>
+
+        <div class="contact-input">
+          <label class="contact-form-label">Phone Number</label>
+          <input type="number" class="contact-form-control" formControlName="phoneNumber">
+          <div class="text-danger" *ngIf="contactUserForm.controls['phoneNumber'].invalid && (isFormSubmitted || contactUserForm.controls['phoneNumber'].touched || contactUserForm.controls['phoneNumber'].dirty)">
+             <span *ngIf="contactUserForm.controls['phoneNumber'].errors?.['required']">This field is required</span>
+             <span *ngIf="contactUserForm.controls['phoneNumber'].errors?.['minlength']">This field atleast 10 Degits</span>
+          </div>
+        </div>
+
+        <div class="contact-input">
+          <label class="contact-form-label">Email Id</label>
+          <input type="email" class="contact-form-control" formControlName="emailId">
+          <div class="text-danger" *ngIf="contactUserForm.controls['emailId'].invalid && (isFormSubmitted || contactUserForm.controls['emailId'].touched || contactUserForm.controls['emailId'].dirty)">
+             <span *ngIf="contactUserForm.controls['emailId'].errors?.['required']">This field is required</span>
+             <span *ngIf="contactUserForm.controls['emailId'].errors?.['email']">This field must be email proper</span>
+          </div>
+        </div>
+
+        <div class="contact-input">
+            <label class="contact-form-label">Message</label>
+            <textarea name="message" class="contact-form-control" id="message" formControlName="message"></textarea>
+            <div class="text-danger" *ngIf="contactUserForm.controls['message'].invalid && (isFormSubmitted || contactUserForm.controls['message'].touched || contactUserForm.controls['message'].dirty)">
+               <span *ngIf="contactUserForm.controls['message'].errors?.['required']">This field is required</span>
+            </div>
+          </div>
+
+  
+          <div class="contact-input-button">
+            <input type="Submit" (click)="onContact()" value="Form Submit">
+          </div>
+    </form>
+  </div>
+</div>  

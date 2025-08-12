@@ -1,0 +1,95 @@
+<div class="acc-create-body"> 
+    <div class="acc-create-container">
+      <div class="acc-create-header">
+        <h2>CREATE YOUR BANKING ACCOUNT</h2>
+      </div>
+        <form class="acc-create-form" [formGroup]="accUserForm">
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Customer Name</label>
+            <input type="text" class="acc-create-form-control" formControlName="customerName">
+            <div class="text-danger" *ngIf="accUserForm.controls['customerName'].invalid && (isFormSubmitted || accUserForm.controls['customerName'].touched || accUserForm.controls['customerName'].dirty)">
+               <span *ngIf="accUserForm.controls['customerName'].errors?.['required']">This Field is Required</span>
+            </div>
+          </div>
+
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Age</label>
+            <input type="number" class="acc-create-form-control" formControlName="age">
+            <div class="text-danger" *ngIf="accUserForm.controls['age'].invalid && (isFormSubmitted || accUserForm.controls['age'].touched || accUserForm.controls['age'].dirty)">
+               <span *ngIf="accUserForm.controls['age'].errors?.['required']">This Field is Required</span>
+            </div>
+          </div>
+
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Date Of Birth</label>
+            <input type="date" class="acc-create-form-control" formControlName="dateOfBirth">
+            <div class="text-danger" *ngIf="accUserForm.controls['dateOfBirth'].invalid && (isFormSubmitted || accUserForm.controls['dateOfBirth'].touched || accUserForm.controls['dateOfBirth'].dirty)">
+               <span *ngIf="accUserForm.controls['dateOfBirth'].errors?.['required']">This Field is Required</span>
+            </div>
+          </div>
+          
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Customer Address</label>
+            <textarea class="acc-create-form-control" formControlName="customerAddress"></textarea>
+            <div class="text-danger" *ngIf="accUserForm.controls['customerAddress'].invalid && (isFormSubmitted || accUserForm.controls['customerAddress'].touched || accUserForm.controls['customerAddress'].dirty)">
+                <span *ngIf="accUserForm.controls['customerAddress'].errors?.['required']">This Field is Required</span>
+            </div>
+        </div>
+
+        <div class="acc-create-input">
+          <label class="acc-create-form-label">Account Type</label>
+          <select class="acc-create-form-control" id="accountType" formControlName="accountType">
+            <option value="savingAccount">Saving Account</option>
+            <option value="businessAccount">Business Accounts</option>
+            <option value="studentAccount">Student Account</option>
+            <option value="seniorAccount">Senior Account</option>
+          </select>
+          <div class="text-danger" *ngIf="accUserForm.controls['accountType'].invalid && (isFormSubmitted || accUserForm.controls['accountType'].touched || accUserForm.controls['accountType'].dirty)">
+              <span *ngIf="accUserForm.controls['accountType'].errors?.['accountType']">This Field is Required</span>
+          </div>
+        </div>
+
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Phone Number</label>
+            <input type="number" class="acc-create-form-control" formControlName="phoneNumber">
+            <div class="text-danger" *ngIf="accUserForm.controls['phoneNumber'].invalid && (isFormSubmitted || accUserForm.controls['phoneNumber'].touched || accUserForm.controls['phoneNumber'].dirty)">
+               <span *ngIf="accUserForm.controls['phoneNumber'].errors?.['required']">This field is required</span>
+               <span *ngIf="accUserForm.controls['phoneNumber'].errors?.['minlength']">This field atleast 10 Degits</span>
+            </div>
+          </div>
+
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Email Id</label>
+            <input type="email" class="acc-create-form-control" formControlName="emailId">
+            <div class="text-danger" *ngIf="accUserForm.controls['emailId'].invalid && (isFormSubmitted || accUserForm.controls['emailId'].touched || accUserForm.controls['emailId'].dirty)">
+               <span *ngIf="accUserForm.controls['emailId'].errors?.['required']">This field is required</span>
+               <span *ngIf="accUserForm.controls['emailId'].errors?.['email']">This field must be email proper</span>
+            </div>
+          </div>
+
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Aadhar Number</label>
+            <input type="email" class="acc-create-form-control" formControlName="aadharNumber">
+            <div class="text-danger" *ngIf="accUserForm.controls['aadharNumber'].invalid && (isFormSubmitted || accUserForm.controls['aadharNumber'].touched || accUserForm.controls['aadharNumber'].dirty)">
+               <span *ngIf="accUserForm.controls['aadharNumber'].errors?.['required']">This field is required</span>
+               <span *ngIf="accUserForm.controls['aadharNumber'].errors?.['pattern']">This field must be aadhar proper</span>
+            </div>
+          </div>
+
+          <div class="acc-create-input">
+            <label class="acc-create-form-label">Pan Number</label>
+            <input type="email" class="acc-create-form-control" formControlName="panNumber">
+            <div class="text-danger" *ngIf="accUserForm.controls['panNumber'].invalid && (isFormSubmitted || accUserForm.controls['panNumber'].touched || accUserForm.controls['panNumber'].dirty)">
+               <span *ngIf="accUserForm.controls['panNumber'].errors?.['required']">This field is required</span>
+               <span *ngIf="accUserForm.controls['panNumber'].errors?.['pattern']">This field must be pan number proper(Like this eg- ACBCD1234F)</span>
+            </div>
+          </div>
+
+          <div class="acc-create-input-button">
+            <input type="Submit" (click)="onAccCreate()" value="Send Request">
+          </div>
+          
+        </form>
+    </div>
+</div>
+

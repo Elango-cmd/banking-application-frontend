@@ -1,0 +1,54 @@
+<app-innernavbar></app-innernavbar>
+<div class="customer-body"> 
+  <div class="customer-container">
+    <div class="customer-header">
+      <h2>customer Information</h2>
+    </div>
+    <form class="customer-form" [formGroup]="customerUserForm">
+        <div class="customer-input">
+            <label class="customer-form-label">Account Number : </label>
+            <input type="number" class="customer-form-control" formControlName="accountNumber" [disabled]="true">
+        </div>
+    
+        <div class="customer-input">
+            <label class="customer-form-label">Account Holder Name : </label>
+            <input type="text" class="customer-form-control" formControlName="customerName" [disabled]="true">
+        </div>
+                            
+        <div class="customer-input">
+            <label class="customer-form-label">Account Holder Address : </label>
+            <input type="text" class="customer-form-control" formControlName="customerAddress" [disabled]="true">
+        </div>
+    
+        <div class="customer-input">
+            <label class="customer-form-label">Account Type : </label>
+            <input type="text" class="customer-form-control" formControlName="accountType" [disabled]="true">
+        </div>
+    
+        <div class="customer-input">
+            <label class="customer-form-label">Date of Birth : </label>
+            <input type="text" class="customer-form-control" formControlName="dateOfBirth" [disabled]="true">
+        </div>
+            
+        <div class="customer-input">
+            <label class="customer-form-label">Phone Number : </label>
+            <input type="text" class="customer-form-control" formControlName="phoneNumber" [disabled]="true">
+        </div>
+            
+        <div class="customer-input">
+            <label class="customer-form-label">Gamil Id : </label>
+            <input type="text" class="customer-form-control" formControlName="emailId" [disabled]="true">
+        </div>
+            
+        <div class="customer-input">
+            <label class="customer-form-label">Aadhar Number : </label>
+            <input type="text" class="customer-form-control" formControlName="aadharNumber" [disabled]="true">
+        </div>
+            
+        <div class="customer-input">
+            <label class="customer-form-label">Pan Number : </label>
+            <input type="text" class="customer-form-control" formControlName="panNumber" [disabled]="true">
+        </div>
+    </form>
+  </div>
+</div>

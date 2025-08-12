@@ -1,0 +1,35 @@
+<div class="login-body"> 
+    <div class="login-container">
+        <h2>LOGIN YOUR ACCOUNT</h2>
+        <form [formGroup]="loginUserForm">
+
+          <div class="login-input">
+            <label class="login-form-label">Email Id</label>
+            <input type="email" class="login-form-control" formControlName="emailId">
+            <div class="text-danger" *ngIf="loginUserForm.controls['emailId'].invalid && (isFormSubmitted || loginUserForm.controls['emailId'].touched || loginUserForm.controls['emailId'].dirty)">
+               <span *ngIf="loginUserForm.controls['emailId'].errors?.['required']">This field is required</span>
+               <span *ngIf="loginUserForm.controls['emailId'].errors?.['email']">This field must be email proper</span>
+            </div>
+          </div>
+
+          <div class="login-input">
+            <label class="login-form-label">Password</label>
+            <input type="password" class="login-form-control" formControlName="password">
+            <div class="text-danger" *ngIf="loginUserForm.controls['password'].invalid && (isFormSubmitted || loginUserForm.controls['password'].touched || loginUserForm.controls['password'].dirty)">
+               <span *ngIf="loginUserForm.controls['password'].errors?.['required']">This field is required</span>
+               <span *ngIf="loginUserForm.controls['password'].errors?.['minlength']">This field is minimum 6 charactors</span>
+            </div>
+          </div>
+
+          <div class="login-forget-link">
+            <p><a routerLink="/forgot" routerLinkActive="active">Forgot password?</a></p>
+          </div>
+          <div class="login-input-button">
+            <input type="Submit" (click)="onLogin()" value="Login">
+          </div>
+          <div class="login-reg-link">
+            <p>New to Evilan? <a routerLink="/register" routerLinkActive="active">Create an account</a></p>
+          </div>
+        </form>
+    </div>
+</div>

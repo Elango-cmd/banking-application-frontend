@@ -1,0 +1,39 @@
+/* terms-and-conditions.component.css */
+.terms-container {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    color: #2c3e50;
+  }
+  
+  .terms-content {
+    margin-top: 20px;
+    line-height: 1.6;
+  }
+  
+  h3 {
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #34495e;
+  }
+  .imp-contant{
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bolder;
+  }
+  .star{
+    display: flex;
+    justify-content: center;
+  }
+
+  

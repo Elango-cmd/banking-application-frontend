@@ -1,0 +1,80 @@
+/* Container for the customer creation form */
+.customer-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+    min-height: 70vh;
+    background-color: #f4f7fa;
+}
+
+/* Main form container */
+.customer-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px slateblue;
+    width: 100%;
+    max-width: 900px; /* Increased max-width for two-column layout */
+}
+
+/* Header for the form */
+.customer-header h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Flexbox layout for input fields in two columns */
+.customer-form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* three columns */
+    gap: 20px; /* Space between fields */
+    margin-bottom: 20px;
+}
+
+/* Individual input fields styling */
+.customer-input {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels for input fields */
+.customer-form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input fields */
+.customer-form-control {
+    pointer-events: none;
+    width: 90%;
+    padding: 10px;
+    font-size: 14px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #007bff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.customer-form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+
+/* For mobile responsiveness, make the form stack vertically */
+@media (max-width: 768px) {
+    .customer-form {
+        grid-template-columns: 1fr; /* Stack the form fields vertically on small screens */
+    }
+
+    .customer-input-button input[type="submit"] {
+        width: 100%; /* Make the submit button full width */
+    }
+}

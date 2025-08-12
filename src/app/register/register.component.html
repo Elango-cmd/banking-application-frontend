@@ -1,0 +1,67 @@
+<div class="reg-body"> 
+    <div class="reg-container">
+      <div class="header">
+        <h2>CREATE YOUR ACCOUNT</h2>
+      </div>
+        <form class="reg-form" [formGroup]="regUserForm">
+          <div class="reg-input">
+            <label class="reg-form-label">Customer Name</label>
+            <input type="text" class="reg-form-control" formControlName="customerName">
+            <div class="text-danger" *ngIf="regUserForm.controls['customerName'].invalid && (isFormSubmitted || regUserForm.controls['customerName'].touched || regUserForm.controls['customerName'].dirty)">
+               <span *ngIf="regUserForm.controls['customerName'].errors?.['required']">This Field is Required</span>
+            </div>
+          </div>
+
+          <div class="reg-input">
+            <label class="reg-form-label">Phone Number</label>
+            <input type="number" class="reg-form-control" formControlName="phoneNumber">
+            <div class="text-danger" *ngIf="regUserForm.controls['phoneNumber'].invalid && (isFormSubmitted || regUserForm.controls['phoneNumber'].touched || regUserForm.controls['phoneNumber'].dirty)">
+               <span *ngIf="regUserForm.controls['phoneNumber'].errors?.['required']">This field is required</span>
+               <span *ngIf="regUserForm.controls['phoneNumber'].errors?.['minlength']">This field atleast 10 Degits</span>
+            </div>
+          </div>
+
+          <div class="reg-input">
+            <label class="reg-form-label">Email Id</label>
+            <input type="email" class="reg-form-control" formControlName="emailId">
+            <div class="text-danger" *ngIf="regUserForm.controls['emailId'].invalid && (isFormSubmitted || regUserForm.controls['emailId'].touched || regUserForm.controls['emailId'].dirty)">
+               <span *ngIf="regUserForm.controls['emailId'].errors?.['required']">This field is required</span>
+               <span *ngIf="regUserForm.controls['emailId'].errors?.['email']">This field must be email proper</span>
+            </div>
+          </div>
+
+          <div class="reg-input">
+            <label class="reg-form-label">Password</label>
+            <input type="password" class="reg-form-control" formControlName="password">
+            <div class="text-danger" *ngIf="regUserForm.controls['password'].invalid && (isFormSubmitted || regUserForm.controls['password'].touched || regUserForm.controls['password'].dirty)">
+               <span *ngIf="regUserForm.controls['password'].errors?.['required']">This field is required</span>
+               <span *ngIf="regUserForm.controls['password'].errors?.['minlength']">This field is minimum 6 charactors</span>
+            </div>
+          </div>
+        
+          <div class="reg-input">
+            <label class="reg-form-label">Confirm Password</label>
+            <input type="password" class="reg-form-control" formControlName="crmpassword">
+            <div class="text-danger" *ngIf="regUserForm.controls['crmpassword'].invalid && (isFormSubmitted || regUserForm.controls['crmpassword'].touched || regUserForm.controls['crmpassword'].dirty)">
+               <span *ngIf="regUserForm.controls['crmpassword'].errors?.['required']">This field is required</span>
+               <span *ngIf="regUserForm.controls['crmpassword'].errors?.['minlength']">This field is minimum 6 charactors</span>
+               <span *ngIf="regUserForm.controls['crmpassword'].errors?.['MustMatch']">Confirm password does't match</span>
+            </div>
+          </div>
+
+          <div class="reg-policy">
+            <p>By continuing, you agree to Evilan's <a routerLink="/terms" routerLinkActive="active">Terms of Use and Privacy Policy.</a><p>
+          </div>
+
+          <div class="reg-input-button">
+            <input type="Submit" (click)="onRegister()" value="Register Now">
+          </div>
+
+          <div class="reg-login-text">
+            <p>Already have an account? <a routerLink="/login" routerLinkActive="active">login</a></p>
+          </div>
+          
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,120 @@
+/* Container for the contact form */
+.contact-header{
+    text-align: center;
+}
+h1{
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: underline;
+    color: #2c3e50;
+}
+.contact-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 60px;
+    min-height: 70vh;
+    background-color: #f4f7fa;
+}
+
+/* Centering the form */
+.contact-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px slateblue;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Heading style */
+h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form input styles */
+.contact-input {
+    margin-bottom: 10px;
+}
+
+.contact-form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.contact-form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contact-form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Error message styles */
+.text-danger {
+    font-size: 12px;
+    color: #e74c3c;
+    margin-top: 5px;
+}
+
+/* Submit button style */
+.contact-input-button input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-input-button input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* terms and condition link */
+.contact-policy p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+
+.contact-policy a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-policy a:hover {
+    text-decoration: underline;
+}
+
+/* contact link for users */
+.contact-contact-text p {
+    text-align: center;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.contact-contact-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact-contact-text a:hover {
+    text-decoration: underline;
+}

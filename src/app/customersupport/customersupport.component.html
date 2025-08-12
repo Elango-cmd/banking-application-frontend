@@ -1,0 +1,29 @@
+<!-- customer-support.component.html -->
+<div class="customer-support-container">
+    <h2>Customer Support</h2>
+  
+    <div class="support-options">
+      <div class="support-item">
+        <h3>FAQs</h3>
+        <p>Find answers to the most common questions.</p>
+        <a routerLink="/faq" routerLinkActive="active"class="support-link">Go to FAQs</a>
+      </div>
+      
+      <div class="support-item">
+        <h3>Contact Details</h3>
+        <p>If you need personalized assistance, get in touch with us.</p>
+        <ul class="contact-details">
+          <li><strong>Phone:</strong> {{phoneNumber}}</li>
+          <li><strong>Email:</strong> {{emailId}}</li>
+        </ul>
+        <button (click)="contactSupport()">Contact Support</button>
+      </div>
+      
+      <div class="support-item">
+        <h3>Live Chat</h3>
+        <p>Our support agents are available 24/7 to assist you.</p>
+        <button (click)="startLiveChat()">Start Live Chat</button>
+      </div>
+    </div>
+  </div>
+  

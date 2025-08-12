@@ -1,0 +1,22 @@
+<div class="otp-body"> 
+    <div class="otp-container">
+      <div class="otp-header">
+        <h2>OTP Verification</h2>
+      </div>
+        <form class="otp-form" [formGroup]="otpUserForm">
+          <div class="otp-input">
+            <label class="otp-form-label">Your OTP code </label>
+            <input type="text" class="otp-form-control" formControlName="otp">
+            <div class="text-danger" *ngIf="otpUserForm.controls['otp'].invalid && (isFormSubmitted || otpUserForm.controls['otp'].touched || otpUserForm.controls['otp'].dirty)">
+               <span *ngIf="otpUserForm.controls['otp'].errors?.['required']">This Field is Required</span>
+            </div>
+          </div>
+
+          <div class="otp-input-button">
+            <input type="Submit" (click)="onOTP()" value="Verify Now">
+          </div>
+          
+        </form>
+    </div>
+</div>
+

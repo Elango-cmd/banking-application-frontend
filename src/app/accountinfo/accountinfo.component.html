@@ -1,0 +1,34 @@
+<app-innernavbar></app-innernavbar>
+<div class="account-body"> 
+  <div class="account-container">
+    <div class="account-header">
+      <h2>Account Information</h2>
+    </div>
+    <form class="account-form" [formGroup]="accountUserForm">
+      <div class="account-input">
+        <label class="account-form-label">Account Holder Name : </label>
+        <input type="text" class="account-form-control" formControlName="customerName" [disabled]="true">
+      </div>
+
+      <div class="account-input">
+        <label class="account-form-label">Account Number : </label>
+        <input type="number" class="account-form-control" formControlName="accountNumber" [disabled]="true">
+      </div>
+
+      <div class="account-input">
+        <label class="account-form-label">Account Type : </label>
+        <input type="text" class="account-form-control" formControlName="accountType" [disabled]="true">
+      </div>
+
+      <div class="account-input">
+        <label class="account-form-label">IFSC Number : </label>
+        <input type="text" class="account-form-control" formControlName="IFSCNumber" [disabled]="true">
+      </div>
+
+      <div class="account-input">
+        <label class="account-form-label">Bank Branch : </label>
+        <input type="text" class="account-form-control" formControlName="bankBranch" [disabled]="true">
+      </div>        
+    </form>
+  </div>
+</div>
