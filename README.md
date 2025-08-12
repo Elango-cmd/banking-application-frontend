@@ -1,27 +1,43 @@
-# EvilanBacking
+# Banking Application Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.11.
+## Overview
+This is the **frontend** of the Banking Application, built using **Angular**.  
+It provides a modern, responsive interface for managing banking operations such as account management, fund transfers, transaction history, and secure user authentication.  
+The application communicates with a **Spring Boot + MySQL** backend via REST APIs.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
+- 🔐 **User Authentication**
+  - Secure Login & Signup
+  - JWT token storage & validation
+  - Role-based navigation
+- 📊 **Account Dashboard**
+  - Account balance overview
+  - Summary of recent transactions
+- 💸 **Fund Transfer**
+  - Recipient account validation
+  - Transfer confirmation alerts
+- 📜 **Transaction History**
+  - View all past transactions
+  - Search and filter options
+- 📱 **Responsive UI**
+  - Works seamlessly on desktop and mobile devices
 
-## Code scaffolding
+---
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech Stack
+- **Frontend Framework:** Angular
+- **Language:** TypeScript
+- **UI Design:** HTML5, SCSS, Bootstrap / Angular Material
+- **State Management:** Angular Services & RxJS Observables
+- **API Communication:** Angular HttpClient with REST APIs
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation & Setup
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### 1️⃣ Clone the repository
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_FRONTEND_REPO.git
+cd YOUR_FRONTEND_REPO
